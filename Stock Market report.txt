@@ -1,0 +1,54 @@
+# Microsoft Stock Market Analysis Dashboard
+
+## Project Overview
+Developed an interactive Microsoft (MSFT) Stock Market Dashboard using Power BI and Alpha Vantage API data.
+
+The dashboard provides insights into stock price movements, trading volume, daily price fluctuations, and monthly stock performance.
+
+## Tools & Technologies
+- Power BI
+- Power Query
+- DAX
+- Alpha Vantage API
+- Microsoft Excel
+
+## Dashboard Pages
+
+### 1. Overview
+- Latest Closing Price
+- Highest Stock Price
+- Lowest Stock Price
+- Total Trading Volume
+- Stock Price Trend
+- Trading Volume Analysis
+
+### 2. Price Trend
+- Daily Closing Price
+- Previous Day Closing Price
+- Opening Price
+- High and Low Price
+- Market Capitalization
+- Average Trading Volume
+
+### 3. Monthly Data
+- Monthly Stock Price Details
+- Opening, High, Low and Closing Prices
+- Trading Volume
+- Month-wise Filtering
+
+## Data Source
+Alpha Vantage API – Daily Stock Market Data.
+
+## Key Skills Demonstrated
+- API Integration
+- Data Transformation using Power Query
+- DAX Measures and Calculations
+- Interactive Dashboard Development
+- Financial Data Analysis
+- Data Visualization
+
+## How to Use
+1. Download the `.pbix` file.
+2. Open it using Power BI Desktop.
+3. Configure your Alpha Vantage API connection.
+4. Refresh the dataset to retrieve updated stock information.
