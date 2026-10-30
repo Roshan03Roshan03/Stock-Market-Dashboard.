@@ -7,7 +7,7 @@ let
                     #"function" = "TIME_SERIES_DAILY",
                     symbol = "MSFT",
                     outputsize = "compact",
-                    apikey = "YOUR_API_KEY" //add your Api key here
+                    apikey = "YOUR_API_KEY" //add your Api key here // get API key from this website https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=MSFT&outputsize=compact&apikey=YOUR_API_KEY
                 ]
             ]
         )
