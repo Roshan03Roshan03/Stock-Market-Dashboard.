@@ -1,0 +1,40 @@
+let
+    Source = Json.Document(
+        Web.Contents(
+            "https://www.alphavantage.co/query",
+            [
+                Query = [
+                    #"function" = "TIME_SERIES_DAILY",
+                    symbol = "MSFT",
+                    outputsize = "compact",
+                    apikey = "YOUR_API_KEY" //add your Api key here
+                ]
+            ]
+        )
+    ),
+    Daily = Source[#"Time Series (Daily)"],
+    ConvertToTable = Record.ToTable(Daily),
+    RenameColumns = Table.RenameColumns(
+        ConvertToTable,
+        {{"Name", "Date"}, {"Value", "DailyData"}}
+    ),
+    ExpandPrices = Table.ExpandRecordColumn(
+        RenameColumns,
+        "DailyData",
+        {"1. open", "2. high", "3. low", "4. close", "5. volume"},
+        {"Open", "High", "Low", "Close", "Volume"}
+    ),
+    SetTypes = Table.TransformColumnTypes(
+        ExpandPrices,
+        {
+            {"Date", type date},
+            {"Open", type number},
+            {"High", type number},
+            {"Low", type number},
+            {"Close", type number},
+            {"Volume", Int64.Type}
+        }
+    ),
+    SortDates = Table.Sort(SetTypes, {{"Date", Order.Ascending}})
+in
+    SortDates
